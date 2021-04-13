@@ -6,7 +6,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 
 ## Solution Components
-- CML
+- CML Personal ($199/year)
 - VMware Workstation
 - AWS: EC2, S3
 
