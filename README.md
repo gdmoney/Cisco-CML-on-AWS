@@ -30,8 +30,6 @@ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-doc
 aws ec2 import-image --description "Cisco CML" --disk-containers "file://C:\Users\gdavitiani\Desktop\containers.json"
 
 aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d3b
-
-status values: converting > updating > booting > preparing ami > completed
 ```
 
 - launch an instance from the image
