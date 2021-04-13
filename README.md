@@ -40,7 +40,7 @@ aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d
 - node and image definition `.yaml` files get imported with the VM but the image `.qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 - **CLI** to the CML: AWS Console > Instances > Connect > Session Manager > Connect
-- copy the uploaded image(s) their corresponding folder(s)
+- copy the uploaded image(s) into their corresponding folder(s)
 ```
 su sysadmin
 sudo find / -name *.qcow2
@@ -48,3 +48,11 @@ sudo cp /var/local/virl2/dropfolder/csr1000v-universalk9.17.03.01a-serial.qcow2 
 sudo cp /var/local/virl2/dropfolder/vios_l2-adventerprisek9-m.ssa.high_iron_20190423.qcow2 /var/lib/libvirt/images/virl-base-images/iosvl2-2019
 sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /var/lib/libvirt/images/virl-base-images/iosv-159-3
 ```
+  
+- increase storage capacity (optional)
+```
+df -hT
+lsblk
+sudo growpart /dev/mapper/cl_cml2--controller-root 2
+or
+sudo growpart /dev/nvme0n1  2
