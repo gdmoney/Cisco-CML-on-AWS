@@ -44,6 +44,7 @@ aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d
 ```
 su sysadmin
 sudo find / -name *.qcow2
+
 sudo cp /var/local/virl2/dropfolder/csr1000v-universalk9.17.03.01a-serial.qcow2 /var/lib/libvirt/images/virl-base-images/csr1000v-170301a
 sudo cp /var/local/virl2/dropfolder/vios_l2-adventerprisek9-m.ssa.high_iron_20190423.qcow2 /var/lib/libvirt/images/virl-base-images/iosvl2-2019
 sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /var/lib/libvirt/images/virl-base-images/iosv-159-3
