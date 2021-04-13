@@ -1,17 +1,18 @@
-# Cisco CML on AWS
+# Cisco Modeling Labs on AWS
 
 
 ## Project Overview
-Instructions to deploy the Cisco CML network simulation tool on AWS.
+Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on AWS.
 
 
 ## Solution Components
-- Cisco CML
+- CML
 - VMware Workstation
 - AWS: EC2, S3
 
 
 ## Usage
+HTTPS to the ec2's public IP address
 
 
 ## Build
@@ -41,9 +42,9 @@ status values: converting > updating > booting > preparing ami > completed
 - node and image definition `.yaml` files get imported with the VM but the image `.qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 - CLI to the CML: AWS Console > Connect > Session Manager > Connect
-- copy the uploaded image(s) the corresponding folder(s)
+- copy the uploaded image(s) their corresponding folder(s)
 ```
 su sysadmin
 sudo find / -name *.qcow2
-sudo cp /var/lib/libvirt/images/virl-base-images/1/csr1000v-universalk9.17.03.01a-serial.qcow2 /var/lib/libvirt/images/virl-base-images/csr1000v-170301a
+sudo cp /var/local/virl2/dropfolder/csr1000v-universalk9.17.03.01a-serial.qcow2 /var/lib/libvirt/images/virl-base-images/csr1000v-170301a
 ```
