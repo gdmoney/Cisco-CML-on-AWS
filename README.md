@@ -51,8 +51,9 @@ sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /v
   
 - increase storage capacity (optional)
 ```
+sudo yum install cloud-utils-growpart
 df -hT
 lsblk
-sudo growpart /dev/mapper/cl_cml2--controller-root 2
-or
-sudo growpart /dev/nvme0n1  2
+sudo growpart /dev/nvme0n1 2
+```
+
