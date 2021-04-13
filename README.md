@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-Cisco CML network simulation tool running on AWS.
+Instructions to deploy the Cisco CML network simulation tool on AWS.
 
 
 ## Solution Components
@@ -36,12 +36,10 @@ status values: converting > updating > booting > preparing ami > completed
 - launch an instance from the image
 - instance type: c5n.metal
 - create and assign an elastic public IP address
-
 - GUI to the CML: https to the instance's external IP address
 - Tools > Licensing > Register: <TOKEN>
 - node and image definition .yaml files get imported with the VM but the image .qcow2 files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > <FILENAME.qcow2> > Upload Image
-
 - CLI to the CML: AWS Console > Connect > Session Manager > Connect
 - copy the uploaded image(s) the corresponding folder(s)
 ```
