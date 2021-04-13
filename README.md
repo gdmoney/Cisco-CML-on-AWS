@@ -49,7 +49,7 @@ sudo cp /var/local/virl2/dropfolder/vios_l2-adventerprisek9-m.ssa.high_iron_2019
 sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /var/lib/libvirt/images/virl-base-images/iosv-159-3
 ```
   
-- increase storage capacity (optional)
+- increase the VM's storage capacity (optional)
 ```
 sudo yum install cloud-utils-growpart
 df -hT
