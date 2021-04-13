@@ -1,0 +1,10 @@
+[
+  {
+    "Description": "Cisco CML",
+    "Format": "vmdk",
+    "UserBucket": {
+        "S3Bucket": "event-tech-vm-storage",
+        "S3Key": "cml2_p_controller-2.1.2-39.el8.x86_64-142-disk1.vmdk"
+    }
+  }
+]
