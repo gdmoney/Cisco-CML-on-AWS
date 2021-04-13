@@ -16,12 +16,12 @@ HTTPS to the ec2's public IP address
 
 
 ## Build
-- download the OVA and ISO files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
-- open the OVA file in VMware workstation
+- download the `OVA` and `ISO` files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
+- open the `OVA` file in VMware workstation
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
-  - mount the refplat ISO as a CD/DVD
+  - mount the refplat `ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
-  - power down the VM > File > export to OVF
+  - power down the VM > File > export to `OVF`
 - upload the `.vmdk` file to S3
 - [import the VM in AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
 ```
