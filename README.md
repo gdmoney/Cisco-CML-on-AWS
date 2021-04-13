@@ -58,14 +58,14 @@ sudo growpart /dev/nvme0n1 2
 ```
 
 **TODO:**
-- resize the volume group (cl_cml2-controller) and the logical volume (/dev/cl_cml2-controller/root)
+- [ ] resize the volume group (cl_cml2-controller) and the logical volume (/dev/cl_cml2-controller/root)
 ```
 sudo vgdisplay
 sudo lvdisplay
 sudo pvscan
 ```
 - [ ] external connectivity directly to the networking devices
-- GitHub Actions: cloud or self-hosted
-- TFTP server
-- network automation server
-- configure DNS
+- [ ] GitHub Actions: cloud or self-hosted
+- [ ] TFTP server
+- [ ] network automation server
+- [ ] configure DNS
