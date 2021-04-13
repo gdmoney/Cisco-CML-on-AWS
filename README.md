@@ -68,3 +68,4 @@ sudo pvscan
 - GitHub Actions: cloud or self-hosted
 - TFTP server
 - network automation server
+- configure DNS
