@@ -17,12 +17,12 @@ Instructions to deploy the Cisco CML network simulation tool on AWS.
 ## Build
 - download the OVA and ISO files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
 - open the OVA file in VMware workstation
-- Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
-- mount the refplat ISO as a CD/DVD
-- power up the VM and configure `admin` and `sysadmin` accounts
-- File > export to OVF
- - upload the .vmdk file to S3
- - [import the VM as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
+  - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
+  - mount the refplat ISO as a CD/DVD
+  - power up the VM and configure `admin` and `sysadmin` accounts
+  - File > export to OVF
+- upload the .vmdk file to S3
+- [import the VM as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
 ```
 aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\gdavitiani\Desktop\trust-policy.json"
 aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:\Users\gdavitiani\Desktop\role-policy.json"
@@ -34,12 +34,12 @@ status values: converting > updating > booting > preparing ami > completed
 ```
 
 - launch an instance from the image
-- instance type: c5n.metal
-- create and assign an elastic public IP address
+  - instance type: `c5n.metal`
+  - create and assign an elastic public IP address
 - GUI to the CML: https to the instance's external IP address
 - Tools > Licensing > Register: <TOKEN>
-- node and image definition .yaml files get imported with the VM but the image .qcow2 files need to be uploaded
-- Tools > Node and Image Definitions > Image Definitions > Manage > <FILENAME.qcow2> > Upload Image
+- node and image definition `.yaml` files get imported with the VM but the image `.qcow2` files need to be uploaded
+- Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 - CLI to the CML: AWS Console > Connect > Session Manager > Connect
 - copy the uploaded image(s) the corresponding folder(s)
 ```
