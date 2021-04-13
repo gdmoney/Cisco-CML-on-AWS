@@ -40,7 +40,7 @@ aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d
 - node and image definition `.yaml` files get imported with the VM but the image `.qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 - **CLI** to the CML: AWS Console > Instances > Connect > Session Manager > Connect
-- copy the uploaded image(s) into their corresponding folder(s)
+- copy the uploaded images into their corresponding folders
 ```
 su sysadmin
 sudo find / -name *.qcow2
