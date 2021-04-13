@@ -57,7 +57,7 @@ lsblk
 sudo growpart /dev/nvme0n1 2
 ```
 
-**TODO:**
+## TODO:
 - [x] resize the partition
 - [ ] resize the volume group (`cl_cml2-controller`) and the logical volume (`/dev/cl_cml2-controller/root`)
 ```
