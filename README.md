@@ -55,6 +55,7 @@ sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /v
 sudo yum install cloud-utils-growpart
 df -hT
 lsblk
+
 sudo growpart /dev/nvme0n1 2
 ```
 
