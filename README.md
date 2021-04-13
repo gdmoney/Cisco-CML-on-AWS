@@ -64,7 +64,7 @@ sudo vgdisplay
 sudo lvdisplay
 sudo pvscan
 ```
-- external connectivity directly to the networking devices
+[ ] external connectivity directly to the networking devices
 - GitHub Actions: cloud or self-hosted
 - TFTP server
 - network automation server
