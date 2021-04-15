@@ -68,8 +68,9 @@ sudo vgdisplay
 sudo lvdisplay
 sudo pvscan
 ```
-- [ ] external connectivity directly to the networking devices
+- [x] external connectivity - outbound
+- [ ] external connectivity - inbound
 - [ ] GitHub Actions: cloud or self-hosted
 - [ ] TFTP server
 - [ ] network automation server
-- [ ] configure DNS
+- [x] configure DNS
