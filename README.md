@@ -12,7 +12,8 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 
 ## Usage
-HTTPS to the ec2's public IP address
+- **GUI** - HTTPS to the ec2's public IP address
+- **CLI** - SSH to the ec2's public IP address
 
 
 ## Build
