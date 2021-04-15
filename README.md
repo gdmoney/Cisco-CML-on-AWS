@@ -24,7 +24,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   - power up the VM and configure `admin` and `sysadmin` accounts
   - power down the VM and export it: File > export to `OVF`
 - upload the `.vmdk` file to S3
-- [import the VM in AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
+- [import the VM into AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
   ```
   aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\gdavitiani\Desktop\trust-policy.json"
   aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:\Users\gdavitiani\Desktop\role-policy.json"
