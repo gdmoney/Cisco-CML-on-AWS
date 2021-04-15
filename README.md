@@ -20,7 +20,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 - download the `OVA` and `ISO` files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
 - open the `OVA` file in VMware workstation
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
-  - mount the refplat `ISO` as a CD/DVD
+  - mount the `refplat ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
   - power down the VM and export it: File > export to `OVF`
 - upload the `.vmdk` file to S3
