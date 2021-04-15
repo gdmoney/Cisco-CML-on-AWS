@@ -42,33 +42,33 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 - **CLI** to the CML: AWS Console > Instances > Connect > Session Manager > Connect
 - copy the uploaded images into their corresponding folders
-```
-su sysadmin
-sudo find / -name *.qcow2
-
-sudo cp /var/local/virl2/dropfolder/csr1000v-universalk9.17.03.01a-serial.qcow2 /var/lib/libvirt/images/virl-base-images/csr1000v-170301a
-sudo cp /var/local/virl2/dropfolder/vios_l2-adventerprisek9-m.ssa.high_iron_20190423.qcow2 /var/lib/libvirt/images/virl-base-images/iosvl2-2019
-sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /var/lib/libvirt/images/virl-base-images/iosv-159-3
-sudo cp /var/local/virl2/dropfolder/alpine-3-12-base.qcow2 /var/lib/libvirt/images/virl-base-images/alpine-3-12-base
-```
+  ```
+  su sysadmin
+  sudo find / -name *.qcow2
+  
+  sudo cp /var/local/virl2/dropfolder/csr1000v-universalk9.17.03.01a-serial.qcow2 /var/lib/libvirt/images/virl-base-images/csr1000v-170301a
+  sudo cp /var/local/virl2/dropfolder/vios_l2-adventerprisek9-m.ssa.high_iron_20190423.qcow2 /var/lib/libvirt/images/virl-base-images/iosvl2-2019
+  sudo cp /var/local/virl2/dropfolder/vios-adventerprisek9-m.spa.159-3.m2.qcow2 /var/lib/libvirt/images/virl-base-images/iosv-159-3
+  sudo cp /var/local/virl2/dropfolder/alpine-3-12-base.qcow2 /var/lib/libvirt/images/virl-base-images/alpine-3-12-base
+  ```
   
 - increase the VM's storage capacity (optional)
-```
-sudo yum install cloud-utils-growpart
-df -hT
-lsblk
-
-sudo growpart /dev/nvme0n1 2
-```
+  ```
+  sudo yum install cloud-utils-growpart
+  df -hT
+  lsblk
+  
+  sudo growpart /dev/nvme0n1 2
+  ```
 
 ## TODO
 - [x] resize the partition
 - [ ] resize the volume group (`cl_cml2-controller`) and the logical volume (`/dev/cl_cml2-controller/root`)
-```
-sudo vgdisplay
-sudo lvdisplay
-sudo pvscan
-```
+  ```
+  sudo vgdisplay
+  sudo lvdisplay
+  sudo pvscan
+  ```
 - [x] external connectivity - outbound
 - [ ] external connectivity - inbound
 - [ ] GitHub Actions: cloud or self-hosted
