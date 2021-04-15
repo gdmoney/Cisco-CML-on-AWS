@@ -21,7 +21,7 @@ HTTPS to the ec2's public IP address
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
   - mount the refplat `ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
-  - power down the VM > File > export to `OVF`
+  - power down the VM and export it: File > export to `OVF`
 - upload the `.vmdk` file to S3
 - [import the VM in AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
 ```
