@@ -12,8 +12,8 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 
 ## Usage
-- **GUI** - HTTPS to the ec2's public IP address
-- **CLI** - SSH to the ec2's public IP address
+- **GUI** - HTTPS to the CML EC2's public IP address
+- **CLI** - SSH to the CML EC2's public IP address
 
 
 ## Build
@@ -36,7 +36,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 - launch an instance from the image
   - instance type: `c5n.metal`
   - create and assign an elastic public IP address
-- **GUI** to the CML: https to the instance's external IP address
+- **GUI** to the CML: HTTPS to the instance's external IP address
 - Tools > Licensing > Register: `<TOKEN>`
 - node and image definition `.yaml` files get imported with the VM but the image `.qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
