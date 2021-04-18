@@ -55,20 +55,35 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 - increase the VM's storage capacity (optional)
   ```
   sudo yum install cloud-utils-growpart
+  
+  # display existing sizes
   df -hT
   lsblk
-  
+  sudo pvscan
+  sudo vgdisplay
+  sudo lvdisplay
+
+  # resize the partition
   sudo growpart /dev/nvme0n1 2
+  
+  # resize the physical volume
+  sudo pvresize /dev/nvme0n1p2
+
+  # resize the logical volume
+  sudo lvextend -L+32G /dev/cl_cml2-controller/root
+
+  # resize the file system
+  sudo xfs_growfs -d /
+
+  # verify
+  df -hT
+  lsblk
   ```
 
 ## TODO
 - [x] resize the partition
-- [ ] resize the volume group (`cl_cml2-controller`) and the logical volume (`/dev/cl_cml2-controller/root`)
-  ```
-  sudo vgdisplay
-  sudo lvdisplay
-  sudo pvscan
-  ```
+- [x] resize the physical volume and the logical volume
+- [x] resize the file system
 - [x] external connectivity - outbound
 - [ ] external connectivity - inbound
 - [ ] GitHub Actions: cloud or self-hosted
