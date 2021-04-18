@@ -56,7 +56,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   ```
   sudo yum install cloud-utils-growpart
   
-  # display existing sizes
+  # display existing sizes and names
   df -hT
   lsblk
   sudo pvscan
