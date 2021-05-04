@@ -86,3 +86,9 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   df -hT
   lsblk
   ```
+
+
+## Docs
+- [CML Product Page](https://www.cisco.com/c/en/us/products/cloud-systems-management/modeling-labs/index.html)
+- [CML Documentation](https://developer.cisco.com/docs/modeling-labs/)
+- [CML Support Forum](https://learningnetwork.cisco.com/s/topic/0TO3i00000094ZjGAI/cisco-modeling-labs-personal-community)
