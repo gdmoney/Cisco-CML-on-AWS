@@ -8,7 +8,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 ## Solution Components
 - CML Personal ($199/year)
 - VMware Workstation (to convert the `ova` file into a `vmdk` file)
-- AWS: EC2, S3 (to store the `vmdk` file which become an AMI)
+- AWS: EC2, S3 (to store the `vmdk` file which becomes an AMI)
 
 
 ## Usage
