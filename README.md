@@ -7,23 +7,26 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 ## Solution Components
 - CML Personal ($199/year)
-- VMware Workstation
-- AWS: EC2, S3
+- VMware Workstation (to convert the `ova` file into a `vmdk` file)
+- AWS: EC2, S3 (to store the `vmdk` file which become an AMI)
 
 
 ## Usage
-- **GUI** - HTTPS to the CML EC2's public IP address
-- **CLI** - SSH to the CML EC2's public IP address
-
+- **GUI** - HTTPS to the EC2's external IP address
+- **CLI** - SSH to the EC2's external IP address
+  - CLI directly to the lab devices: SecureCRT > Connection > Logon Actions > Remote command: `open /lab_name/node_id/line_#`
+    
 
 ## Build
+### Laptop
 - download the `OVA` and `ISO` files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
-- open the `OVA` file in VMware workstation
+- open the `OVA` file in VMware Workstation
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
   - mount the `refplat ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
   - power down the VM and export it: File > export to `OVF`
 - upload the `.vmdk` file to S3
+- extract the `ISO` image to get the device image `qcow2` files
 - [import the VM into AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
   ```
   aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\gdavitiani\Desktop\trust-policy.json"
@@ -32,16 +35,20 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   
   aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d3b
   ```
-
-- launch an instance from the image
+### AWS Console
+- launch an EC2 instance from the newly created image
   - instance type: `c5n.metal`
   - create and assign an elastic public IP address
-- **GUI** to the CML: HTTPS to the instance's external IP address
+
+### Browser
+- **GUI** to CML: HTTPS to the instance's external IP address or DNS name
 - Tools > Licensing > Register: `<TOKEN>`
-- node and image definition `.yaml` files get imported with the VM but the image `.qcow2` files need to be uploaded
+- node and image **definition** `yaml` files get imported with the VM but the **image** `qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
-- **CLI** to the CML: AWS Console > Instances > Connect > Session Manager > Connect
-- copy the uploaded images into their corresponding folders
+
+### AWS Console
+- **CLI** to CML: AWS Console > Instances > Connect > Session Manager > Connect
+- copy the uploaded images to their corresponding folders
   ```
   su sysadmin
   sudo find / -name *.qcow2
@@ -79,14 +86,3 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   df -hT
   lsblk
   ```
-
-## TODO
-- [x] resize the partition
-- [x] resize the physical volume and the logical volume
-- [x] resize the file system
-- [x] external connectivity - outbound
-- [ ] external connectivity - inbound
-- [ ] GitHub Actions: cloud or self-hosted
-- [ ] TFTP server
-- [ ] network automation server
-- [x] configure DNS
