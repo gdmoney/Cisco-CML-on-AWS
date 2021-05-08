@@ -43,7 +43,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 ### Browser
 - **GUI** to CML: HTTPS to the instance's external IP address or DNS name
 - Tools > Licensing > Register: `<TOKEN>`
-- node and image **definition** `yaml` files get imported with the VM but the **image** `qcow2` files need to be uploaded
+- node and image **definition** `yaml` files get imported with the VM, but the **image** `qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 
 ### AWS Console
