@@ -19,14 +19,14 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 ## Build
 ### Laptop
-- download the `OVA` and `ISO` files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
-- open the `OVA` file in VMware Workstation
+- Download the `OVA` and `ISO` files and the license token from [Cisco](https://learningnetworkstore.cisco.com/myaccount)
+- Open the `OVA` file in VMware Workstation
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
   - mount the `refplat ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
   - power down the VM and export it: File > export to `OVF`
-- extract the `ISO` image to get the device image `qcow2` files
-- upload the `.vmdk` file to S3
+- Extract the `ISO` image to get the device image `qcow2` files
+- Upload the `.vmdk` file to S3
 - [import the VM into AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
   ```
   aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\gdavitiani\Desktop\trust-policy.json"
@@ -36,19 +36,19 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d3b
   ```
 ### AWS Console
-- launch an EC2 instance from the newly created image
+- Launch an EC2 instance from the newly created image
   - instance type: `c5n.metal`
   - create and assign an elastic public IP address
 
 ### Browser
 - **GUI** to CML: HTTPS to the instance's external IP address or DNS name
 - Tools > Licensing > Register: `<TOKEN>`
-- node and image **definition** `yaml` files get imported with the VM, but the **image** `qcow2` files need to be uploaded
+- Node and image **definition** `yaml` files get imported with the VM, but the **image** `qcow2` files need to be uploaded
 - Tools > Node and Image Definitions > Image Definitions > Manage > `FILENAME.qcow2` > Upload Image
 
 ### AWS Console
 - **CLI** to CML: AWS Console > Instances > Connect > Session Manager > Connect
-- copy the uploaded images to their corresponding folders
+- Copy the uploaded images to their corresponding folders
   ```
   su sysadmin
   sudo find / -name *.qcow2
@@ -59,7 +59,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   sudo cp /var/local/virl2/dropfolder/alpine-3-12-base.qcow2 /var/lib/libvirt/images/virl-base-images/alpine-3-12-base
   ```
   
-- increase the VM's storage capacity (optional)
+- Increase the VM's storage capacity (optional)
   ```
   sudo yum install cloud-utils-growpart
   
