@@ -14,7 +14,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 ## Usage
 - **GUI** - HTTPS to the EC2's external IP address
 - **CLI** - SSH to the EC2's external IP address
-  - CLI directly to the lab devices: SecureCRT > Properties > Connection > Logon Actions > Remote command: `open /lab_name/node_id/line_#`
+  - CLI directly to the lab devices: SecureCRT > Properties > Connection > Logon Actions > Remote command: `open /<lab_name>/<node_id>/<line_#>`
     
 
 ## Build
