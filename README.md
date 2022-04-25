@@ -19,7 +19,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 ## Build
 ### Laptop
-- Download the `OVA` and `ISO` files and the license token from the [Cisco Learning Network Store
+- Download the `OVA` and `ISO` files, as well as the license token from the [Cisco Learning Network Store
 ](https://learningnetworkstore.cisco.com/myaccount)
 - Open the `OVA` file in VMware Workstation
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
