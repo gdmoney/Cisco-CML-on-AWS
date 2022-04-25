@@ -26,7 +26,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   - mount the `refplat ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
   - power down the VM and export it: File > export to `OVF`
-- Extract the `refplat ISO` image to get the device image `qcow2` files
+- Extract the `refplat ISO` file to get the device image `qcow2` files
 - Upload the `.vmdk` file to S3
 - [Import the VM into AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
   ```
