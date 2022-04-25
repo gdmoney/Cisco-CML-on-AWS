@@ -19,14 +19,14 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
 
 ## Build
 ### Laptop
-- Download the `OVA` and `ISO` files, as well as the license token from the [Cisco Learning Network Store
+- Download the `OVA` and `refplat ISO` files, as well as the license token from the [Cisco Learning Network Store
 ](https://learningnetworkstore.cisco.com/myaccount)
 - Open the `OVA` file in VMware Workstation
   - Networking Adapter: Bridged (may need to specify the NIC in the Virtual Network Editor)
   - mount the `refplat ISO` as a CD/DVD
   - power up the VM and configure `admin` and `sysadmin` accounts
   - power down the VM and export it: File > export to `OVF`
-- Extract the `ISO` image to get the device image `qcow2` files
+- Extract the `refplat ISO` image to get the device image `qcow2` files
 - Upload the `.vmdk` file to S3
 - [Import the VM into AWS as an AMI image](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html)
   ```
@@ -37,6 +37,7 @@ Instructions to deploy the Cisco Modeling Labs (CML) network simulation tool on 
   
   aws ec2 describe-import-image-tasks --import-task-ids import-ami-0143a066d6e195d3b
   ```
+
 ### AWS Console
 - Launch an EC2 instance from the newly created image
   - instance type: `c5n.metal`
